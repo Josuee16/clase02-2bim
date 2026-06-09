@@ -52,7 +52,16 @@ class Serie(Base):
     premios    = relationship('Premio',     back_populates='serie')
 
     def __repr__(self):
-        return f"Serie: {self.nombre}"
+        return f"Serie: {self.titulo}"
+    
+    def obtener_edad_actores(self):
+        edades = [e.edad for e in self.actores if e.edad is not None]
+        if edades:
+            return sum(edades) / len(edades)
+        return 0.0
+
+    def obtener_premios(self):
+        return [p.nombre_premio for p in self.premios]
 
 class Actor(Base):
     __tablename__ = 'actor'
