@@ -1,0 +1,1 @@
+cadena_base_datos = 'sqlite:///baseactores.db' 
