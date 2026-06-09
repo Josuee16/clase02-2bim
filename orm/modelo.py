@@ -59,9 +59,8 @@ class Serie(Base):
         if edades:
             return sum(edades) / len(edades)
         return 0.0
-
-    def obtener_premios(self):
-        return [p.nombre_premio for p in self.premios]
+    def obtener_cantidad_premios(self):
+        return len(self.premios)
 
 class Actor(Base):
     __tablename__ = 'actor'

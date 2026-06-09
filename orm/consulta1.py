@@ -15,12 +15,15 @@ def main():
         )
 
         for s in series:
-            premios = s.obtener_premios()
+            cantidad_premios = s.obtener_cantidad_premios()
             edad_promedio = s.obtener_edad_actores()
+
             if edad_promedio is not None:
-                print(f"{s.titulo}: {edad_promedio:.2f} {premios}")
-            else:
-                print(f"{s.titulo}: No hay actores")
+                print(
+                    f"Nombre de la Serie: {s.titulo} | "
+                    f"Edad promedio de actores: {edad_promedio:.2f} | "
+                    f"Cantidad de Premios ganados: {cantidad_premios}"
+                )
 
 if __name__ == '__main__':
     main()
